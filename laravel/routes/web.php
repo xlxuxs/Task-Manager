@@ -17,8 +17,6 @@ Route::get('/homepage', function (){
 
 });
 
-
-
 Route::get('/signup', function (){
     return view('sign-up');
 });
@@ -42,3 +40,5 @@ Route::get('/edittask/{task}', [taskController::class, 'showEdit']);
 Route::put('edittask/{task}', [taskController::class, 'editTask']);
 
 Route::delete('/deletetask/{task}', [taskController::class, 'deleteTask']);
+
+Route::get('/filter', [taskController::class, 'filterTasks']);

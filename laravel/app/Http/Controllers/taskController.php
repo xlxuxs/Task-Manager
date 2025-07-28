@@ -25,8 +25,8 @@ class taskController extends Controller
     }
 
     public function showEdit(Request $request, Task $task){
-        
-            return view('edit-task', ['task' => $task]);
+
+                return view('edit-task', ['task' => $task]);
 
     }
 
@@ -49,4 +49,28 @@ class taskController extends Controller
         $task->delete();
         return redirect('/homepage'); 
     }
+  
+    public function filterTasks(Request $request)
+    {
+        $filters = $request->validate([
+            'filter_priority' => 'nullable|string',
+            'filter_status' => 'nullable|string',
+        ]);
+
+        $query = Task::query();
+
+        if (!empty($filters['filter_priority']) && $filters['filter_priority'] !== 'all') {
+            $query->where('priority', $filters['filter_priority']);
+        }
+
+        if (!empty($filters['filter_status']) && $filters['filter_status'] !== 'all') {
+            $query->where('status', $filters['filter_status']);
+        }
+
+        $tasks = $query->where('user_id', auth()->id())->get();
+
+        // Pass the filters and tasks to the view
+        return view('homepage', ['tasks' => $tasks, 'filter' => $filters]);
+    }
+        
 }
