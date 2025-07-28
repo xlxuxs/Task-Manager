@@ -1,0 +1,46 @@
+ 
+.button{
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-top:6px;
+            border:rgb(56, 56, 100)  solid 0.5px;
+            border-radius: 25px;
+            text-align: center;
+            background-color:rgb(98, 98, 156);
+            margin-right: 10px;
+            margin-left:10px;
+        }
+
+.title{
+            color: black;
+            font-size:30px;
+            font-weight: bold;
+            padding-left:10px;
+            padding-bottom: 0px; 
+    }
+
+.time{
+            color:rgb(172, 143, 143);
+            padding-left:10px; 
+            padding-top:1px;
+    }
+
+.dis{
+            padding-left:10px
+    }
+
+.sub-div{
+            background-color:lightgray; 
+            border:black 1px solid; 
+        }
+
+.task-title{
+                font-weight:bold;
+                font-size:30px;
+                padding:15px 15px;
+            }
+
+.nav{
+            display: flex;
+    }
+
