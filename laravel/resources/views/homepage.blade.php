@@ -15,7 +15,7 @@
         <nav class="navbar">
             <div class="sub-navbar">
                 <a href="/homepage" class="home-link">Home</a>
-                <a href="/newtask" class="dashboard-link">Dashboard</a>
+                <a href="/dashboard" class="dashboard-link">Dashboard</a>
             </div>
                     <form action="/logout" method="GET">
                         <button type="submit" class="logout">Log out</button>
@@ -25,25 +25,26 @@
     </div>
 
     <div class="filter-and-newtask">
-
+            
         <div class="sub-filter">
             <span class="filter-text">Filter:</span>
+
             <form action="/filter" method="GET">
                 @csrf
                 
                 <select name="filter_status" class="filter">
-                    <option value="all" {{$filter['filter_status'] === 'all' ? 'selected' : ''}}>All</option>
-                    <option value="completed" {{$filter['filter_status'] === 'completed' ? 'selected' : ''}}>Completed</option>
-                    <option value="pending" {{$filter['filter_status'] === 'pending' ? 'selected' : ''}}>Pending</option>
-                    <option value="Cancelled" {{$filter['filter_status'] === 'cancelled' ? 'selected' : ''}}>Cancelled</option>
+                    <option value="all" >All</option>
+                    <option value="completed" >Completed</option>
+                    <option value="pending">Pending</option>
+                    <option value="Cancelled">Cancelled</option>
                 </select>
 
                 <select name="filter_priority" class="filter">
-                    <option value="all" {{$filter['filter_priority'] === 'all' ? 'selected' : ''}} >All</option>
-                    <option value="urgent" {{$filter['filter_priority'] === 'urgent' ? 'selected' : ''}}>Urgent</option>
-                    <option value="high" {{$filter['filter_priority'] === 'high' ? 'selected' : ''}}>High</option>
-                    <option value="medium" {{$filter['filter_priority'] === 'medium' ? 'selected' : ''}}>Medium</option>
-                    <option value="low" {{$filter['filter_priority'] === 'low' ? 'selected' : ''}}>Low</option>
+                    <option value="all" >All</option>
+                    <option value="urgent" >Urgent</option>
+                    <option value="high">High</option>
+                    <option value="medium" >Medium</option>
+                    <option value="low" >Low</option>
                 </select>
                 <button type="submit" class="filter-button">Filter</button>
             </form>

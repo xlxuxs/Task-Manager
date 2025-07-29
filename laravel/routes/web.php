@@ -9,7 +9,9 @@ Route::get('/', function (){
 });
 
 Route::get('/homepage', function (){
+    
     $tasks=[];
+    
     if(auth()->check()){
             $tasks = auth()->user()->usertask()->latest()->get();
     }
@@ -42,3 +44,5 @@ Route::put('edittask/{task}', [taskController::class, 'editTask']);
 Route::delete('/deletetask/{task}', [taskController::class, 'deleteTask']);
 
 Route::get('/filter', [taskController::class, 'filterTasks']);
+
+Route::get('/dashboard', [taskController::class, 'count']);

@@ -1,7 +1,23 @@
  body{
     margin: 0px;
     background-color:lightgray; 
+    font-family: sans-serif;
  }
+
+textarea{
+    font-size: large;
+}
+
+input{
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+select{
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
 .button{
             padding-left: 10px;
             padding-right: 10px;
@@ -111,6 +127,8 @@
 .logout:hover{
     color: aqua;
     cursor:pointer;
+    background-color: rgb(158, 152, 152);
+    border-radius: 7%;
 }
 
 a{
@@ -152,6 +170,8 @@ a{
     margin-right: 3%;
     background-color: rgb(232, 218, 218); 
     margin-top:10px;
+    height: 90%;
+    padding-bottom: 150px;
 }
 
 
@@ -160,10 +180,29 @@ a{
 }
 
 .dashboard-link{
+    padding: 10px 20px;
     margin-left:10px;
 }
 
+.dashboard-link:hover{
+    color: aqua;
+    cursor: pointer;
+    border-radius: 7%;
+    background-color: rgb(158, 152, 152);
+}
+
 .home-link{
+    padding: 10px 20px;
+}
+
+
+
+.home-link:hover{
+    color: aqua;
+    cursor: pointer;
+    background-color: rgb(158, 152, 152);
+    border-radius: 7%;
+
 
 }
 
@@ -171,6 +210,7 @@ a{
     display: flex;
     justify-content: space-between;
     padding-top: 4px;
+
 }
 
 .filter-and-newtask{
@@ -221,4 +261,216 @@ a{
     border:solid 0.5px gray;
     padding: 12px 16px;
     color: white;
+}
+
+.box-wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.box-1{
+    padding: 30px;
+    border: 0.5px rgb(127, 126, 126) solid;
+    border-radius: 10px;
+    width: 15%;
+}
+
+.number{
+    font-weight: bolder;
+    font-size: x-large;
+}
+
+.stat-title{
+    font-weight: bold;
+    font-size: x-large;
+    padding: 20px 10px;
+    margin-top: 10px;
+}
+
+.count-title{
+    font-weight: bold;
+    font-size: large;
+    padding: 10px 15px;
+}
+
+.stat-wrapper{
+    border-bottom: 1px black solid;
+}
+
+.main-land-div{
+    background-color:  rgb(232, 218, 218);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 40%;
+    width: 40%;   
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.main-land-div h2{
+    text-align: center;
+    padding-top: 20px;
+}
+
+.main-land-div a{
+    display: block;
+    width: 30%;
+    text-align: center;
+    margin-left: 34%;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: rgba(43,114,94,255);
+    color: white;
+    border-radius: 5px;
+}
+
+.main-login-div{
+    background-color:  rgb(232, 218, 218);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 40%;
+    width: 40%;  
+    padding-top: 3%;
+    border: 0.3px solid gray;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.main-login-div form{
+    width: 80%;
+    margin-left: 10%;
+    display:grid;
+    gap: 20px;
+    font-weight: bold;
+    font-size: large;
+}
+
+.main-login-div button{
+    margin-top: 4%;
+    margin-left: 30%;
+    width: 40%;
+    border-radius: 5px;
+    border: solid 0.5px gray;
+    background-color: rgba(43,114,94,255);
+    font-size: medium;
+    color: white;
+}
+
+.main-login-div a{
+    border: 0.3px solid black;
+    margin-top: 1%;
+    margin-left: 30%;
+    width: 22%;
+    border-radius: 5px;
+    border: solid 0.5px gray;
+    background-color: rgba(43,114,94,255);
+    padding-left: 18%;
+    font-size: medium;
+
+
+}
+
+.main-newtask-div{
+    background-color:  rgb(232, 218, 218);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 70%;
+    width: 40%;  
+    padding-top: 3%;
+    border: 0.3px solid gray;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.main-newtask-div form{
+    width: 80%;
+    margin-left: 10%;
+    display:grid;
+    gap: 0px;
+    font-weight: bold;
+    font-size: large;
+}
+
+.main-newtask-div button{
+    margin-top: 4%;
+    margin-left: 30%;
+    width: 40%;
+    border-radius: 5px;
+    border: solid 0.5px gray;
+    background-color: rgba(43,114,94,255);
+    font-size: medium;
+    color: white;
+    font-weight: bold;
+    padding-top:5px ;
+    padding-bottom: 5px;
+}
+
+.main-newtask-div a{
+    border: 0.3px solid black;
+    margin-top: 0%;
+    margin-left: 30%;
+    width: 24%;
+    border-radius: 5px;
+    border: solid 0.5px gray;
+    background-color: rgba(43,114,94,255);
+    padding-left: 16%;
+    font-size: medium;
+    padding-top:5px ;
+    padding-bottom: 5px;
+
+}
+
+.main-newtask-div p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: larger;
+}
+
+.main-newtask-div textarea{
+    height: 70px;
+}
+
+.urgenttasks{
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.taskss-u, .taskss-m, .taskss-h, .taskss-l{
+    margin-top: 2%;
+    border-bottom: 0.2px black solid;
+    display: flex;
+    justify-content: space-between;
+}
+
+.taskss-u {
+    border-bottom: 2px red solid;
+
+}
+
+.taskss-h {
+    border-bottom: 2px orange solid;
+
+}
+
+.taskss-m {
+    border-bottom: 2px yellow solid;
+
+}
+
+.taskss-l {
+    border-bottom: 2px blue solid;
+
 }

@@ -4,11 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{{asset('css/style.css')}}">
+
     <title>Task Manager</title>
 </head>
 <body>
-    <h1>Welcome!!!</h1>
-
+    
+    <div class="main-login-div">
     <form action="/signup" method="POST">
         @csrf
         <label for="name">Name:</label>
@@ -18,8 +20,8 @@
         <label for="password"> Password: </label>
         <input type="password" name="password" id="password">
         <button type="submit">Sign Up</button>
-        <button><a href="/">Back</a></button>
+        <a href="/">Back</a>
     </form>
-
+    </div>
 </body>
 </html>
