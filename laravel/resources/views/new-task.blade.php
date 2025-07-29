@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="{{asset('css/style.css')}}">
-    <title>New Task</title>
-</head>
-<body>
+<x-layout>
     <div class="main-newtask-div">
         <p>Create new task</p>
         <form action="/newtask" method="POST">
@@ -15,10 +6,16 @@
             <label for="title">Title</label>
             <input type="text" name="title" id="title">
             <br>
+            @error('title')
+                <div class="text-danger">{{ $message }}</div>
+            @enderror
 
             <label for="description">Description</label>
             <textarea name="description" id="description"></textarea>
             <br>
+                @error('description') 
+                    <div class="text-danger">{{ $message }}</div>
+                @enderror
 
             <label for="priority">Priority</label>
             <select name="priority">
@@ -39,6 +36,9 @@
 
             <label for="date">Due date</label>
             <input type="date" name="date" id="date">
+            @error('date')
+                <div class="text-danger">{{ $message }}</div>
+            @enderror
 
             <br>
             <br>
@@ -53,5 +53,4 @@
         </form>
     </div>
 
-</body>
-</html>
+</x-layout>

@@ -17,7 +17,10 @@ class taskController extends Controller
             'date' => ['required'],
         ]);
         $incomingDate['user_id'] = auth()->id();
+        $incomingDate['title'] = strip_tags($incomingDate['title']);
+        $incomingDate['description'] = strip_tags($incomingDate['description']); 
 
+        
         
 
         $tasks = Task::create($incomingDate);
@@ -34,6 +37,9 @@ class taskController extends Controller
     }
 
     public function editTask(Request $request, Task $task){
+        if(auth()->user()->id !== $task['user_id']){
+            return redirect('/');
+        }
         $incomingDate = $request->validate([
             'title' => ['required'],
             'description' => ['required'],
@@ -41,6 +47,8 @@ class taskController extends Controller
             'status' => ['required'],
             'date' => ['required'],
         ]);
+        $incomingDate['title'] = strip_tags($incomingDate['title']);
+        $incomingDate['description'] = strip_tags($incomingDate['description']); 
 
         $task->update($incomingDate);
 
@@ -49,6 +57,9 @@ class taskController extends Controller
     }
 
     public function deleteTask(Task $task){
+        if(auth()->user()->id !== $task['user_id']){
+            return redirect('/');
+        }
         $task->delete();
         return redirect('/homepage'); 
     }
@@ -56,33 +67,26 @@ class taskController extends Controller
 
     public function filterTasks(Request $request)
     {
-        // Validate the incoming filter values
         $filters = $request->validate([
             'filter_priority' => 'nullable|string',
             'filter_status' => 'nullable|string',
         ]);
     
-        // Default filters if none are provided
         $filters['filter_priority'] = $filters['filter_priority'] ?? 'all';
         $filters['filter_status'] = $filters['filter_status'] ?? 'all';
     
-        // Start building the query
         $query = Task::query();
     
-        // Apply priority filter if provided
         if ($filters['filter_priority'] !== 'all') {
             $query->where('priority', $filters['filter_priority']);
         }
     
-        // Apply status filter if provided
         if ($filters['filter_status'] !== 'all') {
             $query->where('status', $filters['filter_status']);
         }
     
-        // Get the filtered tasks for the logged-in user
         $tasks = $query->where('user_id', auth()->id())->get();
     
-        // Pass the filters and tasks to the view
         return view('homepage', ['tasks' => $tasks, 'filters' => $filters]);
     }
     

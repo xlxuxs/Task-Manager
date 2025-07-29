@@ -18,6 +18,10 @@ select{
     padding-bottom: 5px;
 }
 
+a:hover{
+    cursor: pointer;
+}
+
 .button{
             padding-left: 10px;
             padding-right: 10px;
@@ -29,6 +33,7 @@ select{
             background-color:rgba(43,114,94,255);
             margin-right: 10px;
             margin-left:10px;
+            color: white;
         }
 
 .title{
@@ -111,7 +116,7 @@ select{
     background-color: rgba(43,114,94,255);
     border-radius: 5px;
     border:solid 0.5px gray;
-    padding: 15px 20px;
+    padding: 10px 15px;
     
 }
 
@@ -219,6 +224,7 @@ a{
     justify-content: space-between;
     padding-top: 4px;
     align-items: center;
+    margin-bottom: 0.8%;
 }
 
 .filter{
@@ -292,8 +298,8 @@ a{
 
 .count-title{
     font-weight: bold;
-    font-size: large;
-    padding: 10px 15px;
+    font-size: larger;
+    padding: 15px 20px;
 }
 
 .stat-wrapper{
@@ -310,6 +316,7 @@ a{
     width: 40%;   
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding-top: 4%;
 }
 
 .main-land-div h2{
@@ -337,7 +344,8 @@ a{
     transform: translate(-50%, -50%);
     height: 40%;
     width: 40%;  
-    padding-top: 3%;
+    padding-top: 2%;
+    padding-bottom: 5%;
     border: 0.3px solid gray;
     border-radius: 10px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
@@ -348,13 +356,13 @@ a{
     width: 80%;
     margin-left: 10%;
     display:grid;
-    gap: 20px;
+    gap: 15px;
     font-weight: bold;
     font-size: large;
 }
 
 .main-login-div button{
-    margin-top: 4%;
+    margin-top: 3%;
     margin-left: 30%;
     width: 40%;
     border-radius: 5px;
@@ -362,6 +370,8 @@ a{
     background-color: rgba(43,114,94,255);
     font-size: medium;
     color: white;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 .main-login-div a{
@@ -374,7 +384,8 @@ a{
     background-color: rgba(43,114,94,255);
     padding-left: 18%;
     font-size: medium;
-
+    padding-top: 5px;
+    padding-bottom: 5px;
 
 }
 
@@ -472,5 +483,71 @@ a{
 
 .taskss-l {
     border-bottom: 2px blue solid;
+
+}
+
+.login-title{
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    padding-top: 20px;
+}
+
+.text-danger{
+    color: red;
+    font-size: 14px;
+    
+}
+
+.main-signup-div{
+    background-color:  rgb(232, 218, 218);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 40%;
+    width: 40%;  
+    padding-top: 2%;
+    padding-bottom: 8%;
+    border: 0.3px solid gray;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.main-signup-div form{
+    width: 80%;
+    margin-left: 10%;
+    display:grid;
+    gap: 15px;
+    font-weight: bold;
+    font-size: large;
+}
+
+.main-signup-div button{
+    margin-top: 3%;
+    margin-left: 30%;
+    width: 40%;
+    border-radius: 5px;
+    border: solid 0.5px gray;
+    background-color: rgba(43,114,94,255);
+    font-size: medium;
+    color: white;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.main-signup-div a{
+    border: 0.3px solid black;
+    margin-top: 1%;
+    margin-left: 30%;
+    width: 22%;
+    border-radius: 5px;
+    border: solid 0.5px gray;
+    background-color: rgba(43,114,94,255);
+    padding-left: 18%;
+    font-size: medium;
+    padding-top: 5px;
+    padding-bottom: 5px;
 
 }

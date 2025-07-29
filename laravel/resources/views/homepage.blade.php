@@ -1,28 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="{{asset('css/style.css')}}">
-
-    <title>Home</title>
-</head>
-<body>
-    {{-- <p>welcome to the home page {{auth()->user()->name}}</p> --}}
-
-    <div class="nav-wrapper">
-        <nav class="navbar">
-            <div class="sub-navbar">
-                <a href="/homepage" class="home-link">Home</a>
-                <a href="/dashboard" class="dashboard-link">Dashboard</a>
-            </div>
-                    <form action="/logout" method="GET">
-                        <button type="submit" class="logout">Log out</button>
-                    </form>
-                    
-        </nav>
-    </div>
+<x-layout>
 
     <div class="filter-and-newtask">
             
@@ -53,11 +29,10 @@
 
             <form action="/homepage" method="GET">
                 @csrf 
-                <button class="newtask">
-                    <a href="/newtask">
+                
+                    <a href="/newtask" class="newtask">
                         New Task
                     </a>
-                </button>
 
             </form>
         </div>
@@ -112,5 +87,5 @@
         @endforeach
 
     </div>
-</body>
-</html>
+
+</x-layout>

@@ -29,7 +29,7 @@ class userController extends Controller
         if(auth()->attempt(['name'=> $incomingData['name'], 'password' => $incomingData['password']])){
             return redirect('/homepage');
         } else {
-            return back()->withErrors(['error' => 'Invalid credentials']);
+            return back()->withErrors(['error' => 'Invalid name or password']);
         }
     }
 

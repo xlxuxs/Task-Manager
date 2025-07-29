@@ -1,27 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="{{asset('css/style.css')}}">
+<x-layout2>
 
-    <title>Task Manager</title>
-</head>
-<body>
-    
-    <div class="main-login-div">
+    <div class="main-signup-div">
+        <h2 class="login-title">Sign up</h2>
     <form action="/signup" method="POST">
         @csrf
         <label for="name">Name:</label>
         <input type="text" name="name" id="name">
+            @error('name')
+                <div class="text-danger">{{ $message }}</div>
+            @enderror
+
         <label for="email"> Email: </label>
         <input type="email" name="email" id="email">
+            @error('email')
+                <div class="text-danger">{{ $message }}</div>
+            @enderror
         <label for="password"> Password: </label>
         <input type="password" name="password" id="password">
+            @error('password')
+                <div class="text-danger">{{ $message }}</div>
+            @enderror
         <button type="submit">Sign Up</button>
         <a href="/">Back</a>
     </form>
     </div>
-</body>
-</html>
+
+</x-layout2>
