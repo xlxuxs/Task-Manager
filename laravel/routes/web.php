@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\taskController;
 use App\Http\Controllers\userController;
+use App\Http\Controllers\adminController;
 
 Route::get('/', function (){
     return view("landing-page");
@@ -46,3 +47,7 @@ Route::delete('/deletetask/{task}', [taskController::class, 'deleteTask']);
 Route::get('/filter', [taskController::class, 'filterTasks']);
 
 Route::get('/dashboard', [taskController::class, 'count']);
+
+Route::get('/admin', [adminController::class, 'authCheck']);
+Route::post('/admin/login', [adminController::class, 'adminLogin']);
+Route::get('/admin/dashboard', [adminController::class, 'dash']);
