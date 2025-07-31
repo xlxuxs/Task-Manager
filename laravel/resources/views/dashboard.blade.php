@@ -9,8 +9,6 @@
             </div>
             <div class="box-wrapper">
 
-                
-
                 <div class="box-1">
                     <h1>Total Task</h1>
                     <p class="number">{{ $total}}</p>

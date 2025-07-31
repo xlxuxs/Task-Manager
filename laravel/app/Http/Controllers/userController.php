@@ -15,6 +15,9 @@ class userController extends Controller
         ]);
 
         $incomingData['password'] = bcrypt($incomingData['password']);
+        $incomingData['name'] = strip_tags($incomingData['name']);
+        $incomingData['email'] = strip_tags($incomingData['email']);
+
         $user = User::create($incomingData);
         
         return redirect('/login');
@@ -25,6 +28,8 @@ class userController extends Controller
             'name' => ['required'],
             'password' => ['required']
         ]);
+        $incomingData['name'] = strip_tags($incomingData['name']);
+        $incomingData['password'] = strip_tags($incomingData['password']);
 
         if(auth()->attempt(['name'=> $incomingData['name'], 'password' => $incomingData['password']])){
             return redirect('/homepage');
