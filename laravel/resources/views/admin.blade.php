@@ -84,9 +84,46 @@
                     </div>
                 </div>
             </div>
+            <div style="margin: 4% 5%; border: 1px black solid; background-color: rgba(43,114,94,255); padding: 20px 700px; border-radius: 5px">
+                    <a href="/newuser">Create new user</a>
+            </div>
 
             <div>
-                
+                <div style="margin-left: 3%; margin-top:3%" >
+                    
+                    <table border="1" cellpadding="10" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th> </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($users as $user)
+                            <tr>
+                                <td>{{ $user->name }}</td>
+                                <td>{{ $user->email }}</td>
+                                <td><button class="edit-button">
+                                    <a href="/edituser/{{$user->id}}" class="edit-link">Edit</a>
+                                </button>
+            
+                                <form action="/deleteuser/{{$user->id}}" method="POST" >
+                                    @csrf
+                                    @method('DELETE')
+                                    <button class="delete-button">
+                                        Delete
+                                    </button>
+                                </form>
+                                </td> 
+                                
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                    
+                </div>
+                </div>
             </div>
         
 

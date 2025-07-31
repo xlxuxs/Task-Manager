@@ -39,6 +39,8 @@ class adminController extends Controller
         $total_medium = Task::where('priority', 'medium')->count();
         $total_low = Task::where('priority', 'low')->count();
 
+        $users = User::all(); 
+
 
 
         return view('admin', ['total'=> $total,
@@ -50,6 +52,53 @@ class adminController extends Controller
                                   'total_medium' => $total_medium,
                                   'total_high' => $total_high,
                                   'total_urgent' => $total_urgent
+                                  ,'users' => $users
                                 ]);
     }
+
+    public function showEdit(Request $request, User $user){
+
+        // $user = User::where('id' === );
+        return view('edit-user', ['user' => $user]);
+
+    }
+
+    public function editUser(Request $request, User $user){
+       
+        $incomingDate = $request->validate([
+            'name' => ['required'],
+            'email' => ['required'],
+            'password' => [ 'required'],
+        ]);
+
+        $incomingDate['name'] = strip_tags($incomingDate['name']);
+        $incomingDate['email'] = strip_tags($incomingDate['email']); 
+
+        $user->update($incomingDate);
+
+        return redirect('/admin/dashboard');
+
+    }
+
+    public function deleteUser(User $user){
+        $user->delete();
+        return redirect('/admin/dashboard'); 
+    }
+
+    public function signUp(User $user, Request $request){
+        $incomingData = $request->validate([
+            'name' => ['required', 'min:2', 'max:50'],
+            'email' => ['required', 'email', 'max:50'],
+            'password'=>['required', 'min:4', 'max:20']
+        ]);
+
+        $incomingData['password'] = bcrypt($incomingData['password']);
+        $incomingData['name'] = strip_tags($incomingData['name']);
+        $incomingData['email'] = strip_tags($incomingData['email']);
+
+        $user = User::create($incomingData);
+        
+        return redirect('/admin/dashboard');
+    }
+
 }

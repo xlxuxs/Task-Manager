@@ -51,3 +51,10 @@ Route::get('/dashboard', [taskController::class, 'count']);
 Route::get('/admin', [adminController::class, 'authCheck']);
 Route::post('/admin/login', [adminController::class, 'adminLogin']);
 Route::get('/admin/dashboard', [adminController::class, 'dash']);
+Route::get('/edituser/{user}', [adminController::class, 'showEdit']);
+Route::put('edituser/{user}', [adminController::class, 'editUser']);
+Route::delete('/deleteuser/{user}', [adminController::class, 'deleteUser'])->name('user.delete');
+Route::get('/newuser', function (){
+    return view('new-user');
+});
+Route::post('/signup', [adminController::class, 'signUp']);
